@@ -1,0 +1,7 @@
+/* Scene is a fixed sibling rendered before .app at z-index 0.
+   .app sits above it at z-index 1 with a transparent background
+   so the scenery shows through. */
+.app {
+  position: relative;
+  z-index: 1;
+}

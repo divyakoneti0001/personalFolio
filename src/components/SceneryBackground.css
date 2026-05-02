@@ -1,0 +1,193 @@
+/* ── Container ─────────────────────────────────────────────────────────────── */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ── Base sky — deep arctic midnight ────────────────────────────────────────── */
+.scene__sky {
+  position: absolute;
+  inset: 0;
+}
+
+.scene__sky--night {
+  background: linear-gradient(
+    180deg,
+    #010608 0%,
+    #020c14 30%,
+    #041020 60%,
+    #020a10 100%
+  );
+}
+
+/* ── Star field ─────────────────────────────────────────────────────────────── */
+.scene__stars {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.scene__stars-sm,
+.scene__stars-lg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.scene__stars-sm {
+  width: 1px;
+  height: 1px;
+  animation: starPulse 5s ease-in-out infinite alternate;
+}
+
+.scene__stars-lg {
+  width: 2px;
+  height: 2px;
+  animation: starPulse 3.5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes starPulse {
+  from { opacity: 0.6; }
+  to   { opacity: 1;   }
+}
+
+/* ── Aurora Borealis ─────────────────────────────────────────────────────────── */
+.scene__aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.scene__aurora-band {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(45px);
+  will-change: transform, opacity;
+}
+
+/* Primary teal — wide, mid-upper sky */
+.scene__aurora-band--1 {
+  width: 88%;
+  height: 210px;
+  top: 9%;
+  left: 6%;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(0, 212, 170, 0.52) 0%,
+    rgba(0, 180, 148, 0.22) 45%,
+    transparent 70%);
+  animation: auroraFloat 11s ease-in-out infinite;
+}
+
+/* Violet — narrower, slightly lower */
+.scene__aurora-band--2 {
+  width: 68%;
+  height: 165px;
+  top: 23%;
+  left: 16%;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(129, 140, 248, 0.38) 0%,
+    rgba(99, 102, 241, 0.14) 48%,
+    transparent 70%);
+  animation: auroraFloat 15s ease-in-out infinite 3.5s;
+}
+
+/* Sky-blue streak — upper sky, offset right */
+.scene__aurora-band--3 {
+  width: 55%;
+  height: 135px;
+  top: 3%;
+  left: 32%;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(56, 189, 248, 0.32) 0%,
+    rgba(14, 165, 233, 0.11) 52%,
+    transparent 70%);
+  animation: auroraFloat 8s ease-in-out infinite 1.5s;
+}
+
+/* Bright teal accent — upper-left */
+.scene__aurora-band--4 {
+  width: 44%;
+  height: 115px;
+  top: 5%;
+  left: 4%;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(0, 232, 200, 0.28) 0%,
+    rgba(0, 200, 175, 0.1) 52%,
+    transparent 70%);
+  animation: auroraFloat 13s ease-in-out infinite 6s;
+}
+
+@keyframes auroraFloat {
+  0%   { transform: scaleX(1)    scaleY(1)    translateY(0px);   opacity: 0.5;  }
+  25%  { transform: scaleX(1.06) scaleY(1.22) translateY(-14px); opacity: 0.88; }
+  50%  { transform: scaleX(0.97) scaleY(1.1)  translateY(-6px);  opacity: 0.68; }
+  75%  { transform: scaleX(1.1)  scaleY(1.28) translateY(-20px); opacity: 1;    }
+  100% { transform: scaleX(1)    scaleY(1)    translateY(0px);   opacity: 0.5;  }
+}
+
+/* ── Static dark base — sits above sky, below landscape, never moves ────────── */
+.scene__base-cover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(to bottom, transparent 0%, #030c14 55%);
+}
+
+/* ── Landscape group wrapper ────────────────────────────────────────────────── */
+.scene__landscape {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+  transform: translateY(15vh);
+}
+
+/* ── Shared SVG landscape layer styles ─────────────────────────────────────── */
+.scene__layer {
+  position: absolute;
+  bottom: 0;
+  left: -8%;
+  width: 116%;
+  display: block;
+  will-change: transform;
+}
+
+.scene__mts-far {
+  height: clamp(130px, 34vh, 340px);
+  opacity: 0.85;
+}
+
+.scene__mts-mid {
+  height: clamp(160px, 40vh, 400px);
+}
+
+.scene__hills {
+  height: clamp(130px, 32vh, 340px);
+}
+
+.scene__mts-near1 {
+  height: clamp(100px, 20vh, 240px);
+}
+
+.scene__mts-near2 {
+  height: clamp(90px, 18vh, 210px);
+}
+
+.scene__trees {
+  height: clamp(80px, 15vh, 180px);
+}
+
+/* ── Solid ground ───────────────────────────────────────────────────────────── */
+.scene__ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(16px, 3vh, 40px);
+  background: #030c14;
+}

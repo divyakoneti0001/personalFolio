@@ -1,0 +1,130 @@
+.work {
+  position: relative;
+  padding: 140px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.work__heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.work__sub {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 64px;
+}
+
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s,
+              box-shadow 0.3s;
+}
+
+/* Grid becomes visible → each card animates in with nth-child delay */
+.work__grid--visible .project-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0ms; }
+.work__grid--visible .project-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 90ms; }
+.work__grid--visible .project-card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 180ms; }
+.work__grid--visible .project-card:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 270ms; }
+
+.project-card:hover {
+  border-color: rgba(0, 212, 170, 0.28);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 212, 170, 0.14), 0 0 40px rgba(0, 212, 170, 0.06);
+}
+
+.project-card__accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .project-card__accent {
+  opacity: 1;
+}
+
+.project-card__body {
+  padding: 32px;
+}
+
+.project-card__category {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.project-card__title {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.project-card__desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #00d4aa;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.project-card__link:hover {
+  color: var(--text-white);
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .work {
+    padding: 100px 24px;
+  }
+  .work__grid {
+    grid-template-columns: 1fr;
+  }
+}
