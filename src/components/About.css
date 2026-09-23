@@ -151,6 +151,14 @@
 
 @media (max-width: 600px) {
   .about {
-    padding: 64px 24px;
+    padding: 48px 20px;
+  }
+  .about__heading {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .about__bio {
+    font-size: 14.5px;
+    line-height: 1.7;
   }
 }

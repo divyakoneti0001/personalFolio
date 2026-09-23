@@ -125,6 +125,17 @@
 
 @media (max-width: 600px) {
   .contact {
-    padding: 64px 24px;
+    padding: 48px 20px;
+  }
+  .contact__heading {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .contact__sub {
+    font-size: 14.5px;
+    margin-bottom: 36px;
+  }
+  .contact__card {
+    padding: 20px;
   }
 }

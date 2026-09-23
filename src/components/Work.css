@@ -122,13 +122,71 @@
   .work {
     padding: 100px 24px;
   }
+}
+
+@media (max-width: 700px) {
+  .work {
+    padding: 48px 20px;
+  }
+  .work__heading {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .work__sub {
+    font-size: 14.5px;
+    margin-bottom: 32px;
+  }
   .work__grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .project-card__body {
+    padding: 18px 16px;
+  }
+  .project-card__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  .project-card__index {
+    font-size: 12px;
+  }
+  .project-card__category {
+    font-size: 10px;
+  }
+  .project-card__title {
+    font-size: 17px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .project-card__desc {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .project-card__tags {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .project-card__tags .glass-tag--sm {
+    padding: 3px 9px;
+    font-size: 11px;
+  }
+  .project-card__link {
+    font-size: 13px;
   }
 }
 
-@media (max-width: 600px) {
-  .work {
-    padding: 64px 24px;
+@media (max-width: 380px) {
+  .work__grid {
+    gap: 10px;
+  }
+  .project-card__body {
+    padding: 14px 12px;
   }
 }

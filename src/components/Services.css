@@ -58,11 +58,40 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .services {
-    padding: 64px 24px;
+    padding: 48px 20px;
   }
   .services__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .service-card {
+    padding: 20px 16px;
+  }
+  .service-card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 20px;
+  }
+  .service-card__title {
+    font-size: 17px;
+  }
+  .service-card__tagline {
+    font-size: 12.5px;
+    margin-bottom: 8px;
+  }
+  .service-card__desc {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 380px) {
+  .services__grid {
+    gap: 10px;
+  }
+  .service-card {
+    padding: 16px 14px;
   }
 }

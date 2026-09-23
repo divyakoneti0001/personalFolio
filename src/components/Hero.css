@@ -63,3 +63,32 @@
   flex-wrap: wrap;
   margin-bottom: 80px;
 }
+
+@media (max-width: 600px) {
+  .hero__content {
+    padding: 0 20px;
+  }
+  .hero__eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    margin-bottom: 16px;
+  }
+  .hero__title {
+    font-size: clamp(36px, 11vw, 52px);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .hero__subtitle {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+  .hero__desc {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+  .hero__actions {
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+}
