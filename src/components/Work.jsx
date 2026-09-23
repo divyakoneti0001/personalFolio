@@ -8,7 +8,6 @@ const projects = [
     category: 'AI · Automation',
     desc: 'Replaced manual ticket triage by bridging Cursor with Jira and GitHub via the Model Context Protocol — turning the editor into an autonomous agent that reads, plans, and acts across the entire dev stack.',
     tags: ['MCP', 'Cursor', 'Jira', 'GitHub'],
-    accent: 'linear-gradient(135deg, #818cf8, #38bdf8)',
     link: 'https://divyakoneti.substack.com/p/level-up-cursor-building-an-autonomous',
   },
   {
@@ -17,7 +16,6 @@ const projects = [
     category: 'Frontend · No-Code',
     desc: 'A drag-and-drop editor that lets anyone personalize their website without touching code — drop in countdown timers, image carousels, and product grids, then update live content on the fly.',
     tags: ['React', 'TypeScript', 'DnD Kit', 'CMS'],
-    accent: 'linear-gradient(135deg, #38bdf8, #00d4aa)',
     link: 'https://help.moengage.com/hc/en-us/articles/360016569831-Create-a-Web-Personalization-Campaign#h_01HXA339NJ708G8EV9VY4XXJQT',
   },
   {
@@ -26,7 +24,6 @@ const projects = [
     category: 'Frontend · UI/UX',
     desc: 'A YouTube mock-up where the interface adapts to your taste and mood — pick a theme and watch the entire viewing experience transform around you.',
     tags: ['React', 'CSS Themes', 'JavaScript', 'Figma'],
-    accent: 'linear-gradient(135deg, #00d4aa, #818cf8)',
     link: '#',
   },
   {
@@ -35,7 +32,6 @@ const projects = [
     category: 'Productivity · Frontend',
     desc: 'A Kanban-style task organizer that makes managing work intuitive — drag tasks across columns, track progress at a glance, and keep everything in order.',
     tags: ['React', 'DnD Kit', 'JavaScript', 'CSS'],
-    accent: 'linear-gradient(135deg, #818cf8, #00d4aa)',
     link: 'https://kanban-board-ten-livid.vercel.app/',
   },
 ]
@@ -69,11 +65,13 @@ export default function Work() {
       <p className="work__sub">A few things I've built — from idea to deployment.</p>
 
       <div ref={gridRef} className="work__grid">
-        {projects.map((p) => (
+        {projects.map((p, i) => (
           <div key={p.id} className="glass-card project-card">
-            <div className="project-card__accent" style={{ background: p.accent }} />
             <div className="project-card__body">
-              <p className="project-card__category">{p.category}</p>
+              <div className="project-card__top">
+                <span className="project-card__index">{String(i + 1).padStart(2, '0')}</span>
+                <p className="project-card__category">{p.category}</p>
+              </div>
               <h3 className="project-card__title">{p.title}</h3>
               <p className="project-card__desc">{p.desc}</p>
               <div className="project-card__tags">

@@ -3,7 +3,6 @@ import './Contact.css'
 export default function Contact() {
   return (
     <section id="contact" className="contact">
-      <div className="contact__orb" />
       <div className="section-label">Contact</div>
       <h2 className="contact__heading">
         Let's <span className="gradient-text">build something</span> together

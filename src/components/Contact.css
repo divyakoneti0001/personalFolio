@@ -6,24 +6,11 @@
   text-align: center;
 }
 
-.contact__orb {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.22) 0%, transparent 70%);
-  filter: blur(80px);
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
 .contact__heading {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(36px, 5vw, 60px);
-  font-weight: 700;
-  color: var(--text-white);
+  font-weight: 500;
+  color: var(--text);
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 16px;
@@ -31,7 +18,7 @@
 
 .contact__sub {
   font-size: 16px;
-  color: var(--text);
+  color: var(--text-soft);
   margin-bottom: 48px;
   max-width: 500px;
   margin-left: auto;
@@ -65,34 +52,32 @@
 .contact__field label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-bright);
+  color: var(--text);
   letter-spacing: 0.03em;
 }
 
 .contact__field input,
 .contact__field textarea {
-  background: rgba(255, 255, 255, 0.04);
+  background: transparent;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 18px;
+  border-radius: 4px;
+  padding: 14px 16px;
   font-size: 15px;
-  color: var(--text-white);
+  color: var(--text);
   font-family: inherit;
   outline: none;
   resize: vertical;
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s;
 }
 
 .contact__field input::placeholder,
 .contact__field textarea::placeholder {
-  color: rgba(161, 161, 181, 0.4);
+  color: var(--text-faint);
 }
 
 .contact__field input:focus,
 .contact__field textarea:focus {
-  border-color: rgba(124, 58, 237, 0.5);
-  background: rgba(124, 58, 237, 0.05);
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+  border-color: var(--text);
 }
 
 .contact__submit {
@@ -109,14 +94,14 @@
 .social-link {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text);
+  color: var(--text-soft);
   text-decoration: none;
   transition: color 0.2s;
   letter-spacing: 0.01em;
 }
 
 .social-link:hover {
-  color: var(--text-white);
+  color: var(--text);
 }
 
 .contact__dot {

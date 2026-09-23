@@ -39,10 +39,7 @@ export default function About() {
         <div ref={leftRef} className="about__left">
           <div className="glass-card about__card">
             <div className="about__avatar">
-              <div className="about__avatar-ring" />
-              <div className="about__avatar-inner">
-                <img src="/avatar.jpg" alt="Divya Koneti" className="about__avatar-photo" />
-              </div>
+              <img src="/avatar.jpg" alt="Divya Koneti" className="about__avatar-photo" />
             </div>
             <h2 className="about__name">Divya Koneti</h2>
             <p className="about__role">Software Developer</p>
@@ -72,7 +69,7 @@ export default function About() {
           <p className="about__bio">
             I'm a passionate developer who loves turning complex problems into elegant,
             human-centered solutions. With a background spanning frontend craft, backend architecture,
-            , I bring ideas from concept to production.
+            and everything in between, I bring ideas from concept to production.
           </p>
           <p className="about__bio">
             When I'm not coding, you'll find me exploring art, clicking photos, or obsessing over typography and motion design.

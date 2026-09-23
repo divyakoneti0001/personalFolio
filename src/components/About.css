@@ -32,37 +32,9 @@
   width: 100px;
   height: 100px;
   margin-bottom: 8px;
-}
-
-.about__avatar-ring {
-  position: absolute;
-  inset: -4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #00d4aa, #38bdf8);
-  opacity: 0.7;
-  animation: spin 8s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.about__avatar-inner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: var(--bg-2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Syne', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text-white);
-  border: 4px solid var(--bg);
   overflow: hidden;
+  border: 1px solid var(--border-hover);
 }
 
 .about__avatar-photo {
@@ -73,17 +45,18 @@
 }
 
 .about__name {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 700;
-  color: var(--text-white);
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 .about__role {
-  font-size: 14px;
-  color: #00d4aa;
+  font-size: 13px;
+  color: var(--text-soft);
   font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .about__stats {
@@ -103,18 +76,18 @@
 }
 
 .about__stat-num {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 700;
-  color: var(--text-white);
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 .about__stat-label {
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--text-faint);
 }
 
 .about__stat-divider {
@@ -131,10 +104,10 @@
 }
 
 .about__heading {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(32px, 4vw, 52px);
-  font-weight: 700;
-  color: var(--text-white);
+  font-weight: 500;
+  color: var(--text);
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
@@ -143,7 +116,7 @@
 .about__bio {
   font-size: 16px;
   line-height: 1.8;
-  color: var(--text);
+  color: var(--text-soft);
   margin-bottom: 20px;
 }
 
@@ -156,7 +129,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--text-faint);
   margin-bottom: 16px;
 }
 

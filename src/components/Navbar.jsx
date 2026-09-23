@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
 
-const links = ['About', 'Work', 'Travel', 'Contact']
+const links = ['About', 'Services', 'Work', 'Contact']
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -21,7 +21,9 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <div className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+      <div className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        Divya Koneti
+      </div>
       <ul className="navbar__links">
         {links.map((link) => (
           <li key={link}>

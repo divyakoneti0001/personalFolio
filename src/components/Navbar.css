@@ -7,48 +7,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 60px;
-  transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s, padding 0.3s;
+  padding: 28px 60px;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s, border-color 0.4s, padding 0.3s;
 }
 
 .navbar--scrolled {
-  background: rgba(7, 7, 16, 0.7);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 16px 60px;
+  background: rgba(246, 244, 238, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 60px;
 }
 
 .navbar__logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Syne', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text);
   cursor: pointer;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   transition: opacity 0.2s;
   user-select: none;
 }
 
 .navbar__logo:hover {
-  opacity: 0.8;
-}
-
-.navbar__logo-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #a78bfa, #38bdf8);
-  box-shadow: 0 0 12px rgba(124, 58, 237, 0.8);
+  opacity: 0.6;
 }
 
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   list-style: none;
 }
 
@@ -57,17 +47,35 @@
   border: none;
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--text);
-  padding: 8px 16px;
-  border-radius: 100px;
-  letter-spacing: 0.01em;
-  transition: color 0.2s, background 0.2s;
+  color: var(--text-soft);
+  padding: 8px 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 1px;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 .navbar__link:hover,
 .navbar__link--active {
-  color: var(--text-bright);
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  transform: scaleX(1);
 }
