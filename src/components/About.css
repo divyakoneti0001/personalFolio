@@ -148,3 +148,9 @@
     gap: 48px;
   }
 }
+
+@media (max-width: 600px) {
+  .about {
+    padding: 64px 24px;
+  }
+}

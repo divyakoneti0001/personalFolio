@@ -60,7 +60,7 @@
 
 @media (max-width: 640px) {
   .services {
-    padding: 100px 24px;
+    padding: 64px 24px;
   }
   .services__grid {
     grid-template-columns: 1fr;

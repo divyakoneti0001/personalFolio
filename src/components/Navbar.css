@@ -4,20 +4,28 @@
   left: 0;
   right: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 60px;
   border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, padding 0.3s;
+  transition: background 0.4s, border-color 0.4s;
 }
 
-.navbar--scrolled {
-  background: rgba(246, 244, 238, 0.86);
+.navbar--scrolled,
+.navbar--open {
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
-  padding: 18px 60px;
+}
+
+.navbar__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 60px;
+  transition: padding 0.3s;
+}
+
+.navbar--scrolled .navbar__bar {
+  padding: 16px 60px;
 }
 
 .navbar__logo {
@@ -27,6 +35,7 @@
   color: var(--text);
   cursor: pointer;
   letter-spacing: -0.01em;
+  white-space: nowrap;
   transition: opacity 0.2s;
   user-select: none;
 }
@@ -78,4 +87,94 @@
 .navbar__link:hover::after,
 .navbar__link--active::after {
   transform: scaleX(1);
+}
+
+/* ── Mobile hamburger toggle ─────────────────────────────────────────────── */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar__toggle--open span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.navbar__toggle--open span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* ── Mobile dropdown menu ─────────────────────────────────────────────────── */
+.navbar__menu {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  padding: 0 24px 8px;
+}
+
+.navbar__menu-link {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+  padding: 16px 4px;
+  transition: color 0.2s;
+}
+
+.navbar__menu-link:hover,
+.navbar__menu-link--active {
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .navbar__bar {
+    padding: 18px 24px;
+  }
+
+  .navbar--scrolled .navbar__bar {
+    padding: 14px 24px;
+  }
+
+  .navbar__logo {
+    font-size: 17px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar--open .navbar__menu {
+    display: flex;
+  }
 }
